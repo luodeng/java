@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>get与post区别</title>
+</head>
+<body>
+<form method="get" action="http://localhost:8088">  
+    name:<input type="text" name="name" /><br>  
+    age:<input type="text" name="age" /><br>  
+    <input type="submit" value="Get方法提交"/>  
+</form>  
+<form method="post" action="http://localhost:8088">  
+    name:<input type="text" name="name" /><br>  
+    age:<input type="text" name="age" /><br>  
+    <input type="submit" value="Post方法提交"/>  
+</form>  
+</body>
+</html>
+<!-- 
+http://www.2cto.com/kf/201311/260459.html
+HTTP请求一般包含三个部分：
+Request-Line
+Header
+<空行>
+Message-Body[GET请求不包含Message-Body]
+ 
+ 
+其中Request-Line，就是请求的第一行，例如上面两个请求：
+GET /?name=XXG&age=23 HTTP/1.1
+POST / HTTP/1.1
+它由三部分组成，请求Method(GET/POST/其他)、Request-URI、HTTP-Version，三个部分中间空格隔开。
+Header就是传说中的请求头，键值对的形式，每一条占一行。使用不同浏览器这部分的内容也不同。
+Message-Body是请求主体，POST请求参数就在这一部分，它与Header之间必须要用空行隔开，这样服务器才能分清楚Header和Body。Message-Body的长度就是Header中的Content-Length。一般GET请求中是没有这一部分的。
+上面POST请求中的参数就是Message-Body：
+name=XXG&age=23
+ 
+所以，如果再有人问GET请求和POST请求的区别，可以回答：
+GET请求的参数在URL中，在请求的第一行Request-Line中，而POST请求的参数在请求主体Message-Body中。
+
+ -->

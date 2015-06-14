@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="multipart/form-data; charset=utf-8">
+<meta charset="UTF-8">
+<title>文件上传</title>
+</head>
+<script src="js/jquery-1.11.2.js"></script>
+ <script>                         
+  $(function(){
+	  $("#btn").click(function(){
+		  alert("upload");
+		  $("#upform").attr("action","Upload").submit();
+		  //window.location.href='view'; 
+	  })
+  })
+   
+    </script>
+	</head>
+	<body>
+           <form id="upform" enctype="multipart/form-data" method="post" >
+                      请选择文件：<br><input type="file" name="f"><br>
+                      文件描述：<br><textarea rows="5" cols="70" name="desc"></textarea><br>
+                      <input type="button" id="btn" value="上传" >
+            </form>
+
+
+	</body>
+
+</html>
