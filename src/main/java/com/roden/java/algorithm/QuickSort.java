@@ -1,7 +1,7 @@
-package com.roden.java.important;
+package com.roden.java.algorithm;
 
 //快速排序,
-public class Sort {
+public class QuickSort {
 
 	static int items[] = { 1, 45, 2, 5, 6, 6, 2, 07, 14, 4 };
 
