@@ -24,6 +24,7 @@ public class WebSocketTest {
          * int count = 0; while (count < 3) { Thread.sleep(1000);
          * session.getBasicRemote().sendText(message + ":" + count); count++; }
          */
+    	session.getUserProperties().put("", "");
         session.getBasicRemote().sendText("我对大家说:" + message);
         for (Entry<String, Session> entry : sessions.entrySet()) {
             // entry.getValue().getAsyncRemote().sendText(message);
