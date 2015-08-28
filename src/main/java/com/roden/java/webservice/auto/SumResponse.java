@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>sumResponse complex type锟斤拷 Java 锟洁。
+ * <p>sumResponse complex type的 Java 类。
  * 
- * <p>锟斤拷锟斤拷模式片锟斤拷指锟斤拷锟斤拷锟斤拷锟节达拷锟斤拷锟叫碉拷预锟斤拷锟斤拷锟捷★拷
+ * <p>以下模式片段指定包含在此类中的预期内容。
  * 
  * <pre>
  * &lt;complexType name="sumResponse">
@@ -36,7 +36,7 @@ public class SumResponse {
     protected int _return;
 
     /**
-     * 锟斤拷取return锟斤拷锟皆碉拷值锟斤拷
+     * 获取return属性的值。
      * 
      */
     public int getReturn() {
@@ -44,7 +44,7 @@ public class SumResponse {
     }
 
     /**
-     * 锟斤拷锟斤拷return锟斤拷锟皆碉拷值锟斤拷
+     * 设置return属性的值。
      * 
      */
     public void setReturn(int value) {

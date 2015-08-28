@@ -17,7 +17,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "ServiceTest", targetNamespace = "http://webservice/")
+@WebService(name = "ServiceTest", targetNamespace = "http://webservice.java.roden.com/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -33,9 +33,9 @@ public interface ServiceTest {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sum", targetNamespace = "http://webservice/", className = "webservice.auto.Sum")
-    @ResponseWrapper(localName = "sumResponse", targetNamespace = "http://webservice/", className = "webservice.auto.SumResponse")
-    @Action(input = "http://webservice/ServiceTest/sumRequest", output = "http://webservice/ServiceTest/sumResponse")
+    @RequestWrapper(localName = "sum", targetNamespace = "http://webservice.java.roden.com/", className = "com.roden.java.webservice.auto.Sum")
+    @ResponseWrapper(localName = "sumResponse", targetNamespace = "http://webservice.java.roden.com/", className = "com.roden.java.webservice.auto.SumResponse")
+    @Action(input = "http://webservice.java.roden.com/ServiceTest/sumRequest", output = "http://webservice.java.roden.com/ServiceTest/sumResponse")
     public int sum(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0,
@@ -50,9 +50,9 @@ public interface ServiceTest {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://webservice/", className = "webservice.auto.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://webservice/", className = "webservice.auto.SayHelloResponse")
-    @Action(input = "http://webservice/ServiceTest/sayHelloRequest", output = "http://webservice/ServiceTest/sayHelloResponse")
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://webservice.java.roden.com/", className = "com.roden.java.webservice.auto.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://webservice.java.roden.com/", className = "com.roden.java.webservice.auto.SayHelloResponse")
+    @Action(input = "http://webservice.java.roden.com/ServiceTest/sayHelloRequest", output = "http://webservice.java.roden.com/ServiceTest/sayHelloResponse")
     public String sayHello(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);

@@ -17,20 +17,20 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "ServiceTestService", targetNamespace = "http://webservice/", wsdlLocation = "http://localhost:8000/javaee/ServiceTest?wsdl")
+@WebServiceClient(name = "ServiceTestService", targetNamespace = "http://webservice.java.roden.com/", wsdlLocation = "http://localhost:8000/java/ServiceTest?wsdl")
 public class ServiceTestService
     extends Service
 {
 
     private final static URL SERVICETESTSERVICE_WSDL_LOCATION;
     private final static WebServiceException SERVICETESTSERVICE_EXCEPTION;
-    private final static QName SERVICETESTSERVICE_QNAME = new QName("http://webservice/", "ServiceTestService");
+    private final static QName SERVICETESTSERVICE_QNAME = new QName("http://webservice.java.roden.com/", "ServiceTestService");
 
     static {
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8000/javaee/ServiceTest?wsdl");
+            url = new URL("http://localhost:8000/java/ServiceTest?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
@@ -69,7 +69,7 @@ public class ServiceTestService
      */
     @WebEndpoint(name = "ServiceTestPort")
     public ServiceTest getServiceTestPort() {
-        return super.getPort(new QName("http://webservice/", "ServiceTestPort"), ServiceTest.class);
+        return super.getPort(new QName("http://webservice.java.roden.com/", "ServiceTestPort"), ServiceTest.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class ServiceTestService
      */
     @WebEndpoint(name = "ServiceTestPort")
     public ServiceTest getServiceTestPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://webservice/", "ServiceTestPort"), ServiceTest.class, features);
+        return super.getPort(new QName("http://webservice.java.roden.com/", "ServiceTestPort"), ServiceTest.class, features);
     }
 
     private static URL __getWsdlLocation() {

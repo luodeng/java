@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the webservice.auto package. 
+ * generated in the com.roden.java.webservice.auto package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -24,13 +24,13 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _SayHello_QNAME = new QName("http://webservice/", "sayHello");
-    private final static QName _Sum_QNAME = new QName("http://webservice/", "sum");
-    private final static QName _SayHelloResponse_QNAME = new QName("http://webservice/", "sayHelloResponse");
-    private final static QName _SumResponse_QNAME = new QName("http://webservice/", "sumResponse");
+    private final static QName _SayHello_QNAME = new QName("http://webservice.java.roden.com/", "sayHello");
+    private final static QName _Sum_QNAME = new QName("http://webservice.java.roden.com/", "sum");
+    private final static QName _SayHelloResponse_QNAME = new QName("http://webservice.java.roden.com/", "sayHelloResponse");
+    private final static QName _SumResponse_QNAME = new QName("http://webservice.java.roden.com/", "sumResponse");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: webservice.auto
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.roden.java.webservice.auto
      * 
      */
     public ObjectFactory() {
@@ -72,7 +72,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHello }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice/", name = "sayHello")
+    @XmlElementDecl(namespace = "http://webservice.java.roden.com/", name = "sayHello")
     public JAXBElement<SayHello> createSayHello(SayHello value) {
         return new JAXBElement<SayHello>(_SayHello_QNAME, SayHello.class, null, value);
     }
@@ -81,7 +81,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link Sum }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice/", name = "sum")
+    @XmlElementDecl(namespace = "http://webservice.java.roden.com/", name = "sum")
     public JAXBElement<Sum> createSum(Sum value) {
         return new JAXBElement<Sum>(_Sum_QNAME, Sum.class, null, value);
     }
@@ -90,7 +90,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link SayHelloResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice/", name = "sayHelloResponse")
+    @XmlElementDecl(namespace = "http://webservice.java.roden.com/", name = "sayHelloResponse")
     public JAXBElement<SayHelloResponse> createSayHelloResponse(SayHelloResponse value) {
         return new JAXBElement<SayHelloResponse>(_SayHelloResponse_QNAME, SayHelloResponse.class, null, value);
     }
@@ -99,7 +99,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link SumResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice/", name = "sumResponse")
+    @XmlElementDecl(namespace = "http://webservice.java.roden.com/", name = "sumResponse")
     public JAXBElement<SumResponse> createSumResponse(SumResponse value) {
         return new JAXBElement<SumResponse>(_SumResponse_QNAME, SumResponse.class, null, value);
     }
