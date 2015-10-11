@@ -18,10 +18,10 @@ import org.jsoup.select.Elements;
  * 最新县及县以上行政区划代码（截止2014年10月31日）
  * http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201504/t20150415_712722.html
  * 
- * @author dindinmail
+ * @author luodeng
  * 
  */
-public class Main {
+public class xzqhdm {
     private static final Logger log = Logger.getLogger("xzqhdm");
     private static final String separator = ",";
  
@@ -39,16 +39,25 @@ public class Main {
         Document doc = Jsoup.connect("http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201504/t20150415_712722.html").get();
         Elements ps = doc.select(".TRS_PreAppend p");
         for (Element e : ps) {
-            Elements spans = e.select(">span");
-            Element firstE = spans.first();
-            Element secondE = spans.get(1);
-            String key = firstE.text().trim().replace(" ", "").replace("　", "");
-            if (key.endsWith("0000")) {
-                key = key.substring(0, 2);
-            } else if (key.endsWith("00")) {
-                key = key.substring(0, 4);
+            Elements spans = e.select(">span");//返回数据少数格式有问题，要分开处理
+            if(spans.size()>1){
+	            Element firstE = spans.first();
+	            Element secondE = spans.get(1);	            
+	            String key = firstE.text().trim().replace(" ", "").replace("　", "");	           
+	            if (key.endsWith("0000")) {
+	                key = key.substring(0, 2);
+	            } else if (key.endsWith("00")) {
+	                key = key.substring(0, 4);
+	            }
+	            retList.add(key + separator + secondE.text().trim().replace(" ", "").replace("　", ""));
+            }else{
+            	
+            	String key = spans.text().substring(0,6);
+            	String value=spans.text().substring(6,spans.text().length());
+            	
+            	System.out.println(key+"--"+value);
+            	retList.add(key + separator + value.trim());
             }
-            retList.add(key + separator + secondE.text().trim().replace(" ", "").replace("　", ""));
         }
         return retList;
     }
@@ -58,10 +67,10 @@ public class Main {
         PreparedStatement pstmt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://192.168.1.229/db_test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull", "root", "123456");
+            conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/roden?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull", "root", "");
             conn.setAutoCommit(false);// 事务不自动提交
  
-            pstmt = conn.prepareStatement("delete from xyx_xzqh");
+            pstmt = conn.prepareStatement("delete from xzqhdm");
             int count = pstmt.executeUpdate();
             log.log(Level.INFO, "___删除数据" + count);
  
@@ -145,7 +154,7 @@ public class Main {
      */
     private static String getPreSql(int count) {
         StringBuilder sb = new StringBuilder();
-        sb.append("INSERT INTO `xyx_xzqh` (`code`, `name`) VALUES ");
+        sb.append("INSERT INTO `xzqhdm` (`code`, `name`) VALUES ");
         for (int i = 0; i < count; i++) {
             sb.append(" (?, ?),");
         }
