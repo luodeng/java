@@ -35,7 +35,10 @@ public class MD5Util {
 	}
 
 	public static void main(String[] args) {
-		
+		String key="idfs32idnsah;gfp";
+		String account="luodeng";
+		String ssid=calc(account+key);
+		System.out.println(ssid);
 
 		System.out.print(MD5Util.calc(""));
 	}
