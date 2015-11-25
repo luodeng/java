@@ -1,4 +1,4 @@
-package com.roden.java.algorithm;
+package com.roden.java.algorithm.sort;
 
 //冒泡排序
 public class BubbleSorting {

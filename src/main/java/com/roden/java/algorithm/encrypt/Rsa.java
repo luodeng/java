@@ -1,4 +1,4 @@
-package com.roden.java.util;
+package com.roden.java.algorithm.encrypt;
 
 import java.security.KeyFactory;
 import java.security.KeyPair;

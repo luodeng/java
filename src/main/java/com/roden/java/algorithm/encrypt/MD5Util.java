@@ -1,4 +1,4 @@
-package com.roden.java.util;
+package com.roden.java.algorithm.encrypt;
 
 /*
  * 密码一般需要使用某种算法加密后保存，以免数据库管理员能够从数据表中直接窥视到用户的密码。本例使用MD5算法加密。MD5算法是个标准的算法，它加密的特点是不可逆性，即使知道了加密后的密码，也不可能解密到原使密码。
