@@ -9,41 +9,54 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.sql.Types;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class ExportSQL {
 	public static void main(String[] args) throws Exception {
-		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		/*Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		Connection conn = DriverManager.getConnection(
 				"jdbc:sqlserver://localhost:1433;databaseName=om", "autek",
 				"FLYVIDEO");
+		String tableName = "om.dbo.om_pam_type";*/
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection(
+				"jdbc:mysql://AX-LinuxServer:3306/axshop_admin?useUnicode=true&characterEncoding=UTF-8", "root",
+				"anxin1688!@");		
+		String tableName = "AdminUser";
+		
 		DatabaseMetaData dbmd=conn.getMetaData();//获取数据库的元数据 
 		System.out.println(dbmd.getURL()+dbmd.getUserName());		
-		Statement stmt = conn.createStatement();
-		String tableName = "om.dbo.om_pam_type";
+		Statement stmt = conn.createStatement();		
 		ResultSet rs = stmt.executeQuery("select * from  " + tableName);
-		ResultSetMetaData rsmd = rs.getMetaData();//获取数据表的元数据
-		StringBuffer exportSQL=new StringBuffer("");
+		ResultSetMetaData rsmd = rs.getMetaData();//获取数据表的元数据		
+		DateFormat df=new SimpleDateFormat("yyyy-hh-dd HH:mm:ss");
+		PrintWriter pw=new PrintWriter("export.sql");
+		StringBuilder sql=null;
 		while (rs.next()) {
-			String sql = "insert into " + tableName + " (";
+			sql = new StringBuilder("insert into " + tableName + " (");
 			for (int i = 0; i < rsmd.getColumnCount(); i++) {
-				sql += rsmd.getColumnName(i + 1) + ",";
+				sql.append(rsmd.getColumnName(i + 1) + ",");
 			}
-			sql = sql.substring(0, sql.length() - 1);
-			sql += ") values(";
-			for (int i = 0; i < rsmd.getColumnCount(); i++) {
+			//去掉最后一个,
+			sql = sql.deleteCharAt(sql.length() - 1);
+			sql.append( ") values(");
+			for (int i = 0; i < rsmd.getColumnCount(); i++) {				
 				if (rsmd.getColumnType(i + 1)==Types.VARCHAR) {
-					sql += "'" + rs.getString(i + 1) + "',";
-				} else {
-					sql += rs.getString(i + 1) + ",";
+					sql.append( "'" + rs.getString(i + 1) + "',");
+				} else if(rsmd.getColumnType(i + 1)==Types.TIMESTAMP){
+					sql.append( "'" + df.format(rs.getDate(i + 1)) + "',");
+				}else{//Integer 4 SMALLINT 5
+					sql.append( rs.getString(i + 1) + ",");
 				}				
 			}
-			sql = sql.substring(0, sql.length() - 1);
-			sql += ")";
-			exportSQL.append(sql).append("\n");			
+			sql.setLength(sql.length() - 1);
+			sql.append( ")");
+			String exportSql=sql.append("\n").toString();
+			System.out.print(exportSql);
+			pw.write(exportSql);
 		}
-		PrintWriter pw=new PrintWriter("export.sql");
-		System.out.println(exportSQL);
-		pw.write(exportSQL.toString());
 		pw.close();
 	}
 
