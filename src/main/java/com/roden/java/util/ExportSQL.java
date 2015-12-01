@@ -17,13 +17,13 @@ public class ExportSQL {
 		/*Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		Connection conn = DriverManager.getConnection(
 				"jdbc:sqlserver://localhost:1433;databaseName=om", "autek",
-				"FLYVIDEO");
+				"********");
 		String tableName = "om.dbo.om_pam_type";*/
 		
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection(
 				"jdbc:mysql://AX-LinuxServer:3306/axshop_admin?useUnicode=true&characterEncoding=UTF-8", "root",
-				"anxin1688!@");		
+				"********");		
 		String tableName = "AdminUser";
 		
 		DatabaseMetaData dbmd=conn.getMetaData();//获取数据库的元数据 
