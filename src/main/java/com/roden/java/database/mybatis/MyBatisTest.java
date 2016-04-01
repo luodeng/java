@@ -16,7 +16,8 @@ public class MyBatisTest {
 	 */
 	private static SqlSessionFactory getSessionFactory() {
 		SqlSessionFactory sessionFactory = null;
-		String resource = "configuration.xml";
+		//String resource = "com/roden/java/database/mybatis/configuration.xml";
+		String resource = "com/roden/java/configuration.xml";
 		try {
 			sessionFactory = new SqlSessionFactoryBuilder().build(Resources
 					.getResourceAsReader(resource));
