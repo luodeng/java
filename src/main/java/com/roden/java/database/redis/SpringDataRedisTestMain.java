@@ -10,7 +10,7 @@ public class SpringDataRedisTestMain {
      * @param args
      */
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-context2.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:com/roden/java/database/redis/spring-context2.xml");
         RedisTemplate redisTemplate = (RedisTemplate) context.getBean("jedisTemplate");
         // 其中key采取了StringRedisSerializer
         // 其中value采取JdkSerializationRedisSerializer

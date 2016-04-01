@@ -5,7 +5,7 @@
 <configuration>
 	<typeAliases>
 		<!--给实体类起一个别名 user -->
-		<typeAlias type="mybatis.User" alias="User" />
+		<typeAlias type="com.roden.java.database.mybatis.User" alias="User" />
 	</typeAliases>
 	<!--数据源配置  这块用 Mysql数据库 -->
 	<environments default="development">
@@ -22,6 +22,6 @@
 	<mappers>
 		<!--userMapper.xml装载进来  同等于把“dao”的实现装载进来 -->
 		<!-- <mapper resource="userMapper.xml" /> -->
-		<mapper class="mybatis.UserMapper"/>  
+		<mapper class="com.roden.java.database.mybatis.UserMapper"/>  
 	</mappers>
 </configuration> 

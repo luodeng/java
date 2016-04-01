@@ -15,7 +15,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestRedis {
 
     public static void main(String[] args) throws InterruptedException {
-        ApplicationContext app = new ClassPathXmlApplicationContext("classpath:spring-context.xml");
+        ApplicationContext app = new ClassPathXmlApplicationContext("classpath:com/roden/java/database/redis/spring-context.xml");
         // 这里已经配置好,属于一个redis的服务接口
         RedisService redisService = (RedisService) app.getBean("redisService");
 

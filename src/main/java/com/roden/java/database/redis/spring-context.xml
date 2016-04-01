@@ -15,9 +15,9 @@
 	<!-- redis工厂 -->
 	<bean id="jedisConnectionFactory"
 		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
-		p:host-name="127.0.0.1" p:port="6379" p:password="" />
+		p:host-name="192.168.1.65" p:port="6379" p:password="" />
 	<!-- redis服务封装 -->
-	<bean id="redisService" class="database.redis.RedisService">
+	<bean id="redisService" class="com.roden.java.database.redis.RedisService">
 	</bean>
 	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
 		<property name="connectionFactory" ref="jedisConnectionFactory" />
