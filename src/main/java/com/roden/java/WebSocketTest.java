@@ -11,7 +11,9 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-
+/*
+ * 参考：<a href="http://www.oschina.net/translate/java-ee-html5-websocket-example">Java EE HTML5 WebSocket 示例 </a>
+ */
 @ServerEndpoint("/websocket/{uid}")
 public class WebSocketTest {
     // 用户和websocket的session映射

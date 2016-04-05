@@ -11,7 +11,7 @@ import org.elasticsearch.common.transport.InetSocketTransportAddress;
 
 /**
  * 向ES增删改查
- * 
+ * 安装参考：<a href="http://www.oschina.net/translate/elasticsearch-getting-started">ElasticSearch 简单入门  </a>
  * 
  */
 public class IndexTest {
