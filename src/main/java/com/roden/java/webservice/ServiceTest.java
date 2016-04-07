@@ -2,7 +2,9 @@ package com.roden.java.webservice;
 
 import javax.jws.WebService;
 import javax.xml.ws.Endpoint;
-
+/*
+ * 参考：<a href="http://www.cnblogs.com/Johness/archive/2013/04/19/3030392.html">真正的轻量级WebService框架——使用JAX-WS(JWS)发布WebService </a>
+ */
 @WebService
 public class ServiceTest {
 	public String sayHello(String name){

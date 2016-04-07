@@ -9,7 +9,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import redis.clients.jedis.Jedis;
-
+/*
+ * 参考：<a href="http://www.cnblogs.com/liuling/p/2014-4-19-04.html">Java中使用Jedis操作Redis</a>
+ */
 public class TestRedis2 {
     private Jedis jedis;
 
