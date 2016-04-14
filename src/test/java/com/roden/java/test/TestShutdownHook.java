@@ -1,4 +1,4 @@
-package test;
+package com.roden.java.test;
 
 import java.util.Timer;
 import java.util.TimerTask;

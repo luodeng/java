@@ -1,4 +1,4 @@
-package slf4j;
+package com.roden.java;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

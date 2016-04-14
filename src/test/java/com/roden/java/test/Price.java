@@ -1,4 +1,4 @@
-package test;
+package com.roden.java.test;
 
 public class Price {
     final static Price instance = new Price(2.8);

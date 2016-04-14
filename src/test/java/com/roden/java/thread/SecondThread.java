@@ -1,4 +1,4 @@
-package thread;
+package com.roden.java.thread;
 
 public class SecondThread implements Runnable {
     private int i;

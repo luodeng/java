@@ -28,4 +28,17 @@
     <servlet-name>download</servlet-name>
     <url-pattern>/download</url-pattern>
   </servlet-mapping> 
+  
+   <servlet>
+    <servlet-name>stream</servlet-name>
+    <servlet-class>com.roden.java.video.PseudostreamingServlet</servlet-class>
+    <init-param>
+      <param-name>videoPath</param-name>
+      <param-value>F:/BaiduYunDownload/</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>stream</servlet-name>
+    <url-pattern>/stream</url-pattern>
+  </servlet-mapping>
 </web-app>

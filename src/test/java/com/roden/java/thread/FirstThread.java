@@ -1,4 +1,4 @@
-package thread;
+package com.roden.java.thread;
 
 public class FirstThread extends Thread {
     private int i;

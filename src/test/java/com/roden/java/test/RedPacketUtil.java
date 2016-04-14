@@ -1,7 +1,7 @@
  /**  
  *@Description:     
  */ 
-package test;  
+package com.roden.java.test;  
 
 import java.util.ArrayList;
 import java.util.List;

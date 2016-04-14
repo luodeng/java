@@ -1,4 +1,4 @@
-package thread;
+package com.roden.java.thread;
 /**
  * wait() 必须在synchronized 函数或者代码块里面
  * wait() 会让已经获得synchronized 函数或者代码块控制权的Thread暂时休息，并且丧失控制权

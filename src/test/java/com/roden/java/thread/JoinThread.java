@@ -1,4 +1,4 @@
-package thread;
+package com.roden.java.thread;
 
 public class JoinThread extends Thread {
     public JoinThread(String name) {

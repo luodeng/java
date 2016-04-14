@@ -1,4 +1,4 @@
-package test;
+package com.roden.java.test;
 
 public class Test {
 
