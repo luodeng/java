@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
 
-public class ThreadImpl {
+public class FutureTaskTest {
     public static void main(String[] args) {
         //第一种方式
         ExecutorService executor = Executors.newCachedThreadPool();
