@@ -31,18 +31,26 @@ public class MyBatisTest {
 		}		
 	}
 	
-	//注解方式，加载UserMapper.java
+	//加载UserMapper.java
 	@Test
 	public void ann() {
 		SqlSession sqlSession = sessionFactory.openSession();
-		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+		//注解方式（简单sql使用）
+		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);		
+		User user = userMapper.findById(1);
+		System.out.println(user);		
 		
-		User user = userMapper.findById("1");
+		user = userMapper.findByStringId("1");
 		System.out.println(user);
 		
-		user = userMapper.findByStringId(2);
+		//xml映射方式（复杂sql使用）
+		UserMapper2 userMapper2 = sqlSession.getMapper(UserMapper2.class);
+		user = userMapper2.findByIdAnn(1);
 		System.out.println(user);
-
+		
+		//xml传统方式（不推荐）
+		user = sqlSession.selectOne("com.roden.java.database.mybatis.UserMapper2.findByIdAnn", 1);
+		System.out.println(user);	
 	}
 	//传统xml方式，加载mapper.xml
 	@Test

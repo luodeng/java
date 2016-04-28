@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Update;
 
 public interface UserMapper {
 	@Select("select * from user where id=#{id}")  
-	public User findById(String Id);
+	public User findById(Integer Id);	
 	 
 	@Select("select * from user where id=#{id}")  
-	public User findByStringId(int Id);
+	public User findByStringId(String Id);
 	
 	
 	    @Insert("insert into user(id,name,age) values(#{id},#{name}, #{age})")  

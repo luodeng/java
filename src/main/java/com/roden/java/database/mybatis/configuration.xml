@@ -25,6 +25,8 @@
 		
 		 <!-- xml传统方式 -->
 		 <mapper resource="com/roden/java/database/mybatis/mapper.xml" />
+		 <!-- xml推荐方式 -->
+		 <mapper resource="com/roden/java/database/mybatis/mapper2.xml" />
 		 <!-- 注解方式 -->
 		 <mapper class="com.roden.java.database.mybatis.UserMapper"/> 
 	</mappers>
