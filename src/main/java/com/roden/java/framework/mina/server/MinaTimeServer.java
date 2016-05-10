@@ -10,6 +10,7 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.prefixedstring.PrefixedStringCodecFactory;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
+import org.apache.mina.transport.socket.nio.NioDatagramAcceptor;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 import com.roden.java.framework.mina.server.TimeServerHandler;
@@ -21,8 +22,9 @@ public class MinaTimeServer {
 	public static void main(String[] args) throws IOException {
 		
 		  // 创建服务端监控线程
-        IoAcceptor acceptor = new NioSocketAcceptor();
-      
+        //IoAcceptor acceptor = new NioSocketAcceptor();
+        //udp
+		NioDatagramAcceptor acceptor = new NioDatagramAcceptor(null);  
         // 设置日志记录器
         acceptor.getFilterChain().addLast("logger", new LoggingFilter());
         // 设置编码过滤器

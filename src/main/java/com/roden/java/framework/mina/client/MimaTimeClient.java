@@ -11,6 +11,7 @@ import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.prefixedstring.PrefixedStringCodecFactory;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
+import org.apache.mina.transport.socket.nio.NioDatagramConnector;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
 import com.roden.java.framework.mina.server.MinaTimeServer;
@@ -19,7 +20,9 @@ public class MimaTimeClient {
 
 	public static void main(String[] args) {
 		  // 创建客户端连接器.
-        NioSocketConnector connector = new NioSocketConnector();
+        //NioSocketConnector connector = new NioSocketConnector();
+        //udp
+        NioDatagramConnector connector = new NioDatagramConnector();  
         connector.getFilterChain().addLast("logger", new LoggingFilter());
         connector.getFilterChain().addLast("codec",  new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
         //connector.getFilterChain().addLast( "codec", new ProtocolCodecFilter( new PrefixedStringCodecFactory(Charset.forName("UTF-8"))));
