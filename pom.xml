@@ -192,7 +192,7 @@
 			<version>2.2</version>
 		</dependency>			
 			
-		<dependency>
+		<dependency>依赖Validation provider例如 hibernate-validator		
 			<groupId>javax</groupId>
 			<artifactId>javaee-web-api</artifactId>
 			<version>7.0</version>
