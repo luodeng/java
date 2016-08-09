@@ -1,4 +1,4 @@
-﻿package com.roden.java.util;
+package com.roden.java.util;
 import java.util.Arrays;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
