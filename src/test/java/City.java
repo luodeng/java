@@ -32,14 +32,16 @@ public class City {
 			
 			if(code==null){
 				errors.add(name);
+				System.out.println("UPDATE city SET CityCode='' WHERE CityName='"+name+"';");
 			}else{
 				String sql="update city set CityCode='"+code+"' where CityName='"+name+"';";
-				System.out.println(sql);
+				//System.out.println(sql);
 			}
-			
+			map.remove(name);
 			
 		}
 		System.out.println(errors);
+		System.out.println(map);
 	}
 	
 	
