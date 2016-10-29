@@ -8,16 +8,16 @@ public class Test {
 
     public static void main(String[] args) {
         //matches()判断字符串是否匹配某个表达式，"."表示任何一个字符
-        p("abc".matches("..."));
+        p("abc".matches("..."));//true
         //将字符串"a2389a"中的数字用*替换，\d 表示“0--9”数字
-        p("a2389a".replaceAll("\\d", "*"));
+        p("a2389a".replaceAll("\\d", "*"));//a****a
         //将任何是a--z的字符串长度为3的字符串进行编译，这样可以加快匹配速度
         Pattern p = Pattern.compile("[a-z]{3}");
         //进行匹配，并将匹配结果放在Matcher对象中
         Matcher m = p.matcher("abc");
-        p(m.matches());
+        p(m.matches());//true
         //上面的三行代码可以用下面一行代码代替
-        p("abc".matches("[a-z]{3}"));
+        p("abc".matches("[a-z]{3}"));//true
         
     /*  
         .              任何字符
